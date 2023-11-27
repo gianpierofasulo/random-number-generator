@@ -1,0 +1,16 @@
+{
+  "name": "random-number-generator",
+  "version": "1.0.0",
+  "description": "estrazioni del lotto",
+  "main": "main.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "enalotto",
+    "gianpiero",
+    "fasulo"
+  ],
+  "author": "Gianpiero Fasulo <gianpiero@gfasulo.it>",
+  "license": "ISC"
+}
