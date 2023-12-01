@@ -10,7 +10,9 @@ npm install
 ## usage backend
 ```
 ts-node main.ts
+```
 
-## Compile ts into JS in /dis
+## Compile ts into JS in /dist
 ```
 tsc main.ts
+```
