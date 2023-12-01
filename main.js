@@ -36,5 +36,18 @@ function RNGsequence(len, min, max, precision) {
      } */
     return res;
 }
-var myArr = RNGsequence(10, 1, 15, 2);
-console.log(myArr);
+var ruote = ['Bari', 'Cagliari', 'Firenze', 'Genova', 'Milano', 'Napoli', 'Palermo', 'Roma', 'Torino', 'Venezia', 'Nazionale'];
+var estrazioni = {};
+for (var _i = 0, ruote_1 = ruote; _i < ruote_1.length; _i++) {
+    var ruota = ruote_1[_i];
+    var estrazione = RNGsequence(5, 1, 90, 0);
+    estrazioni[ruota] = estrazione;
+}
+//const myArr = RNGsequence( 10, 1, 15, 0);
+console.log(JSON.stringify(estrazioni, null, 2));
+var container = document.getElementById('cnt');
+if (container) {
+    var pre = document.createElement('pre');
+    pre.innerText = JSON.stringify(estrazioni, null, 2);
+    container.appendChild(pre);
+}

@@ -52,6 +52,7 @@ function RNGsequence( len: number, min: number, max: number, precision: number) 
 
 const ruote = ['Bari','Cagliari', 'Firenze', 'Genova', 'Milano', 'Napoli', 'Palermo', 'Roma', 'Torino', 'Venezia', 'Nazionale'];
 
+// variabile di tipo MAPPA cioè mappa valori
 const estrazioni: {[ruota: string]: number[] } = {};
 
 for ( const ruota of ruote ) {
@@ -63,5 +64,39 @@ for ( const ruota of ruote ) {
 
 console.log(JSON.stringify( estrazioni, null ,2) );
 
+
+function createRuota(ruotaName: string, ruotaEstrazioni: number[]) {
+    const ruotaDiv = document.createElement('div');
+    ruotaDiv.className = `ruota ${ruotaName.toLowerCase()}`;
+    const nameH2 = document.createElement('h2');
+    nameH2.className = 'ruotaName';
+    nameH2.innerText = ruotaName;
+    ruotaDiv.appendChild(nameH2);
+
+    for (const num of ruotaEstrazioni) {
+        const numP = document.createElement('p');
+        numP.innerText = num.toString();
+        const numDiv = document.createElement('div');
+        numDiv.className = 'ruota-estrazione';
+        numDiv.appendChild(numP);
+        ruotaDiv.appendChild(numDiv);
+    }
+
+    return ruotaDiv;
+}
+
+const container = document.getElementById('cnt');
+
+if (container) {
+    const pre = document.createElement('pre');
+
+    for (const ruota of ruote) {
+        const ruotaEstrazioni = estrazioni[ruota];
+        const ruotaDiv = createRuota(ruota, ruotaEstrazioni);
+        container.appendChild(ruotaDiv);
+    }
+
+   
+}
 
 
